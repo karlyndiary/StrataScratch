@@ -1,1 +1,1 @@
-# StrataScratch.
+# StrataScratch
