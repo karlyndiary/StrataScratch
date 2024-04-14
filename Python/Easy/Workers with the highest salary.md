@@ -19,3 +19,8 @@ title:
 | worker_title   | varchar    |
 | affected_from  | datetime   |
 
+```
+import pandas as pd
+worker[worker.salary == worker.salary.max()].
+merge(title, how = 'inner', left_on = 'worker_id', right_on = 'worker_ref_id')[['worker_title']]
+```
