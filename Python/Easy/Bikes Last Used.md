@@ -15,3 +15,8 @@ dc_bikeshare_q1_2012:
 | bike_number       | varchar    |
 | rider_type        | varchar    |
 | id                | int        |
+
+```
+import pandas as pd
+dc_bikeshare_q1_2012.groupby(['bike_number'])['end_time'].max().reset_index()
+```
