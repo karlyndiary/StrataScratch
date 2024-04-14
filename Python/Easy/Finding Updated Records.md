@@ -11,3 +11,8 @@ ms_employee_salary
 | salary        | int       |
 | department_id | int       |
 
+```
+import pandas as pd
+import numpy as np
+ms_employee_salary.sort_values(['id','salary'], ascending = (True, False)).groupby(['id']).first().reset_index()
+```
