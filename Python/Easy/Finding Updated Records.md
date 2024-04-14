@@ -15,4 +15,8 @@ ms_employee_salary
 import pandas as pd
 import numpy as np
 ms_employee_salary.sort_values(['id','salary'], ascending = (True, False)).groupby(['id']).first().reset_index()
+
+or
+
+ms_employee_salary.groupby('id').max().reset_index()
 ```
