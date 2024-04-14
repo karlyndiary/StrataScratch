@@ -24,6 +24,5 @@ hotel_reviews:
 
 ```
 import pandas as pd
-hotel_reviews[hotel_reviews['hotel_name'] == 'Hotel Arena'].groupby(['reviewer_score','hotel_name'])['review_date'].count()
-.reset_index()
+hotel_reviews[hotel_reviews['hotel_name'] == 'Hotel Arena'].groupby(['reviewer_score','hotel_name']).size()
 ```
