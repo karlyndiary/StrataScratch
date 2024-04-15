@@ -10,3 +10,7 @@ oscar_nominees:
 | winner      | bool      |
 | id          | int       |
 
+```
+import pandas as pd
+oscar_nominees[oscar_nominees['nominee'] == 'Abigail Breslin']['movie'].count()
+```
