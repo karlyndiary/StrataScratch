@@ -21,3 +21,10 @@ airbnb_units:
 | country     | varchar   |
 | city        | varchar   |
 
+```
+import pandas as pd
+df = pd.merge(airbnb_hosts, airbnb_units, on = 'host_id', how = 'left')
+df = df[(df['age'] < 30) & (df['unit_type'] == 'Apartment')]
+df.groupby(['nationality'])['unit_id'].nunique().reset_index(name='apartment_count').
+sort_values(by='apartment_count', ascending=False)
+```
