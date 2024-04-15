@@ -21,7 +21,7 @@ facebook_posts:
 ```
 import pandas as pd
 df = pd.merge(facebook_reactions, facebook_posts, on = 'post_id', how = 'left')
-heart = df[df['reaction']=='heart'][['post_id']]
+heart = df[df['reaction']=='heart']['post_id']
 result = pd.merge(heart, facebook_posts, on = 'post_id')
 result = result.drop_duplicates(subset='post_id')
 ```
