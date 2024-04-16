@@ -10,5 +10,6 @@ lyft_drivers:
 | yearly_salary | int        |
 
 ```
-
+import pandas as pd
+lyft_drivers[(lyft_drivers['yearly_salary'] <= 30000) | (lyft_drivers['yearly_salary'] >= 70000)]
 ```
