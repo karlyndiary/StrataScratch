@@ -5,3 +5,20 @@ Luckily the user IDs of employees completing the surveys were stored.
 Based on the above, find the average popularity of the Hack per office location.
 Output the location along with the average popularity.
 
+facebook_reactions:
+| Column Name | Data Type |
+|-------------|-----------|
+| poster      | int       |
+| friend      | int       |
+| reaction    | varchar   |
+| date_day    | int       |
+| post_id     | int       |
+
+facebook_posts:
+| Column Name   | Data Type  |
+|---------------|------------|
+| post_id       | int        |
+| poster        | int        |
+| post_text     | varchar    |
+| post_keywords | varchar    |
+| post_date     | datetime   |
