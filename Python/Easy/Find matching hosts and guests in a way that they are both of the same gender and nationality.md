@@ -18,3 +18,10 @@ airbnb_guests:
 | gender      | varchar   |
 | age         | int       |
 
+```
+import pandas as pd
+
+df = pd.merge(airbnb_hosts, airbnb_guests, on = ['gender', 'nationality'], how = 'left').drop_duplicates()
+
+df[['host_id', 'guest_id']]
+```
