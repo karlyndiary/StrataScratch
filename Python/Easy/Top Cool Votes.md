@@ -13,3 +13,8 @@ yelp_reviews
 | funny         | int        |
 | useful        | int        |
 | cool          | int        |
+
+```
+import pandas as pd
+yelp_reviews[['business_name','review_text']][yelp_reviews['cool'] == yelp_reviews['cool'].max()]
+```
