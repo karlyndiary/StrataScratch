@@ -19,5 +19,6 @@ yelp_business:
 | categories    | varchar   |
 
 ```
-
+import pandas as pd
+yelp_business.sort_values('review_count', ascending = False)[0:5][['name','review_count']]
 ```
