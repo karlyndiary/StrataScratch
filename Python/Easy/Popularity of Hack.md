@@ -22,3 +22,11 @@ facebook_posts:
 | post_text     | varchar    |
 | post_keywords | varchar    |
 | post_date     | datetime   |
+
+```
+import pandas as pd
+import numpy as np
+
+df = pd.merge(facebook_employees, facebook_hack_survey, left_on = 'id', right_on = 'employee_id')
+result = df.groupby(['location'])['popularity'].mean().reset_index()
+```
