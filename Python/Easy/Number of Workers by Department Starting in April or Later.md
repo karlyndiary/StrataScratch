@@ -12,7 +12,8 @@ worker:
 | joining_date  | datetime   |
 | department    | varchar    |
 
-
 ```
-
+import pandas as pd
+worker[worker['joining_date'].dt.month >= 4].groupby(['department']).size().reset_index(name = 'num_workers').
+sort_values(by = 'num_workers', ascending = False)
 ```
