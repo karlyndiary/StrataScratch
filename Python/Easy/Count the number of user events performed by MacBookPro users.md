@@ -13,5 +13,6 @@ playbook_events:
 | device      | varchar    |
 
 ```
-
+import pandas as pd
+playbook_events[playbook_events['device'] == 'macbook pro']['event_name'].value_counts()
 ```
