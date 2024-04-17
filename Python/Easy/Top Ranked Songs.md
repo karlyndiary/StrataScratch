@@ -14,5 +14,7 @@ spotify_worldwide_daily_song_ranking:
 | region      | varchar   |
 
 ```
-
+import pandas as pd
+df = spotify_worldwide_daily_song_ranking
+df[df['position'] == 1]['trackname'].value_counts()
 ```
