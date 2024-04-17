@@ -11,5 +11,6 @@ worker:
 | department    | varchar    |
 
 ```
-
+import pandas as pd
+worker[(worker['department'] == 'Admin') & (worker['joining_date'].dt.month >= 4)]['department'].count()
 ```
