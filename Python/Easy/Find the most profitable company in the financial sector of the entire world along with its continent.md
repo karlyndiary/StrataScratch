@@ -16,5 +16,7 @@ forbes_global_2010_2014:
 | forbeswebpage  | varchar   |
 
 ```
-
+import pandas as pd
+df = forbes_global_2010_2014
+df[(df['sector'] == 'Financials') & (df['rank'] == 1)][['company', 'continent']]
 ```
