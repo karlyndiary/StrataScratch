@@ -21,5 +21,8 @@ library_usage:
 | supervisor_district          | float      |
 
 ```
-
+import pandas as pd
+library_usage.query('notice_preference_definition == "email" and
+circulation_active_year == 2016 and provided_email_address == False')
+[['home_library_code']].drop_duplicates()
 ```
