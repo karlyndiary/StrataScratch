@@ -20,3 +20,7 @@ olympics_athletes_events:
 | event       | varchar   |
 | medal       | varchar   |
 
+```
+import pandas as pd
+olympics_athletes_events.drop_duplicates(subset = ['name', 'games'])['games'].value_counts().reset_index().head(1)
+```
