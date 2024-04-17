@@ -14,3 +14,7 @@ spotify_worldwide_daily_song_ranking:
 | date        | datetime  |
 | region      | varchar   |
 
+```
+import pandas as pd
+spotify_worldwide_daily_song_ranking.artist.value_counts()
+```
