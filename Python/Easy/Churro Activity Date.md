@@ -25,5 +25,7 @@ los_angeles_restaurant_health_inspections:
 | record_id              | varchar    |
 
 ```
-
+import pandas as pd
+df = los_angeles_restaurant_health_inspections
+df[(df['facility_name'] == 'STREET CHURROS') & (df['score'] < 95)][['activity_date', 'pe_description']]
 ```
