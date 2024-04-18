@@ -10,5 +10,7 @@ amazon_shipment:
 | shipment_date  | datetime   |
 
 ```
-
+import pandas as pd
+amazon_shipment['year_month'] = amazon_shipment['shipment_date'].dt.strftime('%Y-%m')
+amazon_shipment.groupby('year_month')['shipment_id'].count().reset_index()
 ```
