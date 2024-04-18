@@ -25,5 +25,8 @@ airbnb_search_details:
 | beds                    | int        |
 
 ```
-
+import pandas as pd
+airbnb_search_details.groupby(['city','property_type'])
+[['bedrooms','bathrooms']].mean().reset_index()
+[['city', 'property_type','bathrooms','bedrooms']]
 ```
