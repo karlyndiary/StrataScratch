@@ -18,5 +18,6 @@ forbes_global_2010_2014:
 | forbeswebpage | varchar   |
 
 ```
-
+import pandas as pd
+forbes_global_2010_2014.groupby('company')['profits'].sum().reset_index().sort_values(by = 'profits', ascending = False)[0:3]
 ```
