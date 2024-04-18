@@ -12,5 +12,7 @@ fact_events:
 | event_id    | int        |
 
 ```
-
+import pandas as pd
+fact_events['month'] = fact_events['time_id'].dt.month
+fact_events.groupby(['month','client_id'])['user_id'].nunique().reset_index()
 ```
