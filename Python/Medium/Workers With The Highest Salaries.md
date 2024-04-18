@@ -19,5 +19,7 @@ title:
 | affected_from  | datetime   |
 
 ```
-
+import pandas as pd
+df = pd.merge(worker, title, left_on = 'worker_id', right_on = 'worker_ref_id').head()
+df[df['salary'] == df['salary'].max()][['worker_title']]
 ```
