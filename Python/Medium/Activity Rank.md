@@ -13,5 +13,9 @@ google_gmail_emails:
 | day         | int       |
 
 ```
-
+import pandas as pd
+df = google_gmail_emails.groupby('from_user').size().reset_index()
+df = df.sort_values([0, 'from_user'], ascending = [False, True])
+df['rank'] = df[0].rank(ascending=False, method='first')
+df
 ```
