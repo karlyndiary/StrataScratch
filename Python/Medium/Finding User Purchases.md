@@ -11,5 +11,8 @@ amazon_transactions:
 | revenue     | int        |
 
 ```
-
+import pandas as pd
+df = amazon_transactions.sort_values(['user_id', 'created_at'])
+df['diff'] = df.groupby('user_id')['created_at'].diff()
+df[df['diff'] <= pd.Timedelta(days=7)]['user_id'].unique()
 ```
