@@ -29,5 +29,11 @@ linkedin_employees:
 | salary      | int       |
 
 ```
-
+import pandas as pd
+from numpy import ceil
+df = (linkedin_projects
+            .merge(linkedin_emp_projects, left_on = 'id', right_on = 'project_id')
+            .merge(linkedin_employees, left_on = 'emp_id', right_on = 'id'))
+df['prorate'] = ceil(df.groupby('title')['salary'].transform('sum')*(df['end_date'] - df['start_date']).dt.days/365)
+df[df['prorate'] > df['budget']][['title', 'budget', 'prorate']].drop_duplicates()
 ```
