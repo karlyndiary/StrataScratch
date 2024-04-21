@@ -10,5 +10,9 @@ car_launches:
 | product_name  | varchar   |
 
 ```
-
+import pandas as pd
+df = car_launches.groupby(['company_name','year']).count().reset_index()
+df = df.pivot_table(values = 'product_name', index = 'company_name', aggfunc = 'sum', columns = 'year').reset_index()
+df['net_diff'] = df[2020]-df[2019]
+df = df[['company_name', 'net_diff']]
 ```
