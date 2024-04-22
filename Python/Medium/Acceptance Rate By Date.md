@@ -13,6 +13,7 @@ fb_friend_requests:
 ```
 import pandas as pd
 df = fb_friend_requests[fb_friend_requests.action == 'sent']
-df = df.merge(fb_friend_requests[fb_friend_requests.action == 'accepted'], how = 'left', on = ['user_id_sender', 'user_id_receiver'])
+df = df.merge(fb_friend_requests[fb_friend_requests.action == 'accepted'],
+how = 'left', on = ['user_id_sender', 'user_id_receiver'])
 df.assign(action_y = df.action_y.notnull()).groupby('date_x', as_index = False)['action_y'].mean()
 ```
