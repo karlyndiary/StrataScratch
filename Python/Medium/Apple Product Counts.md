@@ -23,5 +23,11 @@ playbook_users:
 | state        | varchar    |
 
 ```
-
+import pandas as pd
+df = pd.merge(playbook_events, playbook_users, on = 'user_id', how = 'inner')
+apple_devices  = ["macbook pro", "iphone 5s", "ipad air"]
+df = df.drop_duplicates(subset=['user_id', 'device'])
+df['n_apple_users'] = df['device'].isin(apple_devices)
+df_grouped = df.groupby('language').agg({'n_apple_users': 'sum', 'user_id':'nunique'}).reset_index()
+df_grouped = df_grouped.sort_values(by='user_id', ascending=False)
 ```
