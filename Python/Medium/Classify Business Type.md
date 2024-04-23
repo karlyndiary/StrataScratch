@@ -29,5 +29,18 @@ sf_restaurant_health_violations:
 | risk_category          | varchar    |
 
 ```
+import pandas as pd
 
+sf_restaurant_health_violations['category'] = sf_restaurant_health_violations['business_name'].apply(lambda x: \
+'restaurant' if x.lower().find('restaurant') >= 0 \
+
+else 'cafe' if x.lower().find('cafe') >= 0 \
+or x.lower().find('café') >= 0 \
+or x.lower().find('coffee') >= 0 \
+
+else 'school' if x.lower().find('school') >= 0 \
+
+else 'other')
+
+sf_restaurant_health_violations[['business_name', 'category']].drop_duplicates()
 ```
