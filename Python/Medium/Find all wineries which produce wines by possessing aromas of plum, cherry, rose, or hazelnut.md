@@ -19,5 +19,7 @@ winemag_p1:
 | winery        | varchar   |
 
 ```
-
+import pandas as pd
+df = winemag_p1[winemag_p1['description'].str.lower().str.contains('plum|cherry|rose|hazelnut')]
+              [['winery']].drop_duplicates()
 ```
