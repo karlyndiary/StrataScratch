@@ -11,5 +11,9 @@ voting_results:
 | candidate   | varchar   |
 
 ```
-
+import pandas as pd
+df = voting_results[voting_results['candidate'].notna()].copy()
+df['share'] = 1 / df.groupby('voter', as_index = False)['candidate'].transform('count')
+total_shares = df.groupby('candidate', as_index = False)['share'].sum()
+total_shares[total_shares['share'] == total_shares['share'].max()]['candidate']
 ```
