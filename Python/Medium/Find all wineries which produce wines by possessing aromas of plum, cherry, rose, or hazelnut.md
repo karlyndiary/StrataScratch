@@ -20,6 +20,6 @@ winemag_p1:
 
 ```
 import pandas as pd
-df = winemag_p1[winemag_p1['description'].str.lower().str.contains('plum|cherry|rose|hazelnut')]
-              [['winery']].drop_duplicates()
+df = winemag_p1[winemag_p1['description'].str.lower().str.contains("\\bplum\\b|\\bcherry\\b|\\brose\\b|\\bhazelnut\\b")]
+                                          [['winery']].drop_duplicates()
 ```
