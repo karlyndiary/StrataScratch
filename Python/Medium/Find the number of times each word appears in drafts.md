@@ -8,5 +8,10 @@ google_file_store:
 | contents    | varchar   |
 
 ```
+import pandas as pd
+import numpy as np
 
+draft = google_file_store[google_file_store['filename'].str.contains('draft')]
+result = draft.contents.str.split('\W+', expand=True).stack().value_counts().reset_index()
+result = result[result['index'] != '']
 ```
