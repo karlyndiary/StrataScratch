@@ -15,5 +15,6 @@ sat_scores:
 | love        | datetime  |
 
 ```
-
+import pandas as pd
+median_scores = sat_scores[sat_scores['sat_writing'] == sat_scores['sat_writing'].median()][['student_id']]
 ```
