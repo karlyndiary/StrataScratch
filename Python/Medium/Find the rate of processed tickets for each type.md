@@ -8,5 +8,6 @@ facebook_complaints:
 | processed     | bool      |
 
 ```
-
+import pandas as pd
+facebook_complaints.groupby('type', as_index = False)['processed'].mean()
 ```
