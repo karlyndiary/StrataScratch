@@ -21,5 +21,7 @@ customers:
 | phone_number  | varchar   |
 
 ```
-
+import pandas as pd
+df = pd.merge(orders, customers, left_on = 'cust_id', right_on = 'id')
+df['address'].count() / len(df['address'].notna()) * 100
 ```
