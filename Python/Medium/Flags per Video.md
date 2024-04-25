@@ -10,5 +10,9 @@ user_flags:
 | flag_id         | varchar   |
 
 ```
-
+import pandas as pd
+df = user_flags[user_flags['flag_id'].notnull()]
+df["username"] = df['user_firstname'].astype(str) + " " + df['user_lastname'].astype(str)
+df = df.groupby(by='video_id')['username'].nunique().reset_index()
+df = df.rename(columns = {'username': 'num_unique_users'})
 ```
