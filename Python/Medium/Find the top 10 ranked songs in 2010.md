@@ -13,5 +13,7 @@ billboard_top_100_year_end:
 | id          | int       |
 
 ```
-
+import pandas as pd
+df = billboard_top_100_year_end[billboard_top_100_year_end['year']==2010].drop_duplicates(subset = 'song_name', keep = 'last')
+[0:10][['year_rank','group_name','song_name']]
 ```
