@@ -17,5 +17,10 @@ facebook_post_views:
 | viewer_id   | int       |
 
 ```
-
+import pandas as pd
+df = pd.merge(facebook_posts, facebook_post_views, on = 'post_id', how = 'inner')
+df['is_spam'] = df['post_keywords'].str.contains('spam')
+df1 = df.groupby(['post_date']).agg(total_posts = ('post_id', 'count'),spam_posts = ('is_spam', 'sum')).reset_index()
+df1['spam_share'] = (df1['spam_posts']/df1['total_posts'])*100
+df1[['post_date','spam_share']]
 ```
