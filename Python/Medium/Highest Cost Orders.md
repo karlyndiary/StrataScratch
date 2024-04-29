@@ -23,5 +23,10 @@ orders:
 | total_order_cost | int        |
 
 ```
-
+import pandas as pd
+df = pd.merge(customers, orders, left_on = 'id', right_on = 'cust_id', how = 'left')
+datedf = df[(df['order_date'].dt.month >= 2) & (df['order_date'].dt.month <= 5)]
+df1 = datedf.groupby(['first_name','order_date'], as_index = False)['total_order_cost'].sum().reset_index()
+df2 = df1.sort_values(by = 'total_order_cost', ascending = False).head(1)
+df2.rename(columns = {'total_order_cost':'max_cost'})[['first_name','order_date','max_cost']]
 ```
