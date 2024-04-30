@@ -23,5 +23,10 @@ sf_restaurant_health_violations:
 | risk_category          | varchar    |
 
 ```
-
+import pandas as pd
+df = sf_restaurant_health_violations
+df1 = df[df['business_name'] == 'Roxanne Cafe']
+df1['year'] = df1['inspection_date'].dt.year
+df2 = df1.groupby(['year'])['violation_id'].count().reset_index()
+result = df2.sort_values(by='year', ascending=True)
 ```
