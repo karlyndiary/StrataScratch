@@ -26,5 +26,11 @@ sf_bonus:
 | bonus         | int       |
 
 ```
-
+import pandas as pd
+sf_bonus = sf_bonus.groupby(['worker_ref_id']).sum().reset_index()
+df = pd.merge(sf_employee, sf_bonus, left_on = 'id', right_on = 'worker_ref_id', how = 'inner')
+df['total_comp'] = df['salary'] + df['bonus']
+df1 = df.groupby(['employee_title', 'sex'])['total_comp'].mean().reset_index()
+df1.rename(columns={'total_comp': 'avg_total_comp'}, inplace=True)
+result = df1[['employee_title', 'sex', 'avg_total_comp']]
 ```
