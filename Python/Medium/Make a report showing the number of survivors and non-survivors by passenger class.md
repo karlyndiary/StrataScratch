@@ -22,5 +22,7 @@ titanic:
 | embarked     | varchar   |
 
 ```
-
+import pandas as pd
+df = titanic.pivot_table(index = 'survived', columns = 'pclass', values = 'passengerid', aggfunc = 'nunique').reset_index()
+df = df.rename(columns = {1:'first_class', 2:'second_class', 3:'third_class'})
 ```
