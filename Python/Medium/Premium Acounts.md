@@ -14,5 +14,9 @@ premium_accounts_by_day:
 | plan_size          | int       |
 
 ```
-
+import pandas as pd
+premium = premium_accounts_by_day[premium_accounts_by_day.final_price != 0]
+premium['seven_days_later'] = premium.entry_date + pd.Timedelta(days=7)
+df = pd.merge(premium, premium, how = 'left', left_on = ['account_id','seven_days_later'], right_on = ['account_id','entry_date'])
+df.groupby('entry_date_x')[['final_price_x','final_price_y']].count().reset_index()[0:7]
 ```
