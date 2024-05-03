@@ -21,5 +21,6 @@ employee:
 
 ```
 import pandas as pd
-df = employee[employee['salary'] == employee.groupby(['department'])['salary'].transform('max')][['department','first_name','salary']]
+df = employee[employee['salary'] == employee.groupby(['department'])['salary'].transform('max')]
+df[['department','first_name','salary']]
 ```
