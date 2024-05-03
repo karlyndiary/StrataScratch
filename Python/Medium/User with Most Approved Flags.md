@@ -16,5 +16,10 @@ flag_review:
 | reviewed_outcome  | varchar    |
 
 ```
-
+import pandas as pd
+df = pd.merge(user_flags, flag_review, on = 'flag_id', how = 'inner')
+df = df[df['reviewed_outcome'] == 'APPROVED']
+df['username'] = df['user_firstname'] + ' ' + df['user_lastname']
+df = df.groupby('username')['video_id'].nunique().reset_index()
+result = df[df['video_id'] == df['video_id'].max()]['username']
 ```
