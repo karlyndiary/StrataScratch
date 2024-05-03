@@ -20,5 +20,6 @@ employee:
 | manager_id     | int       |
 
 ```
-
+import pandas as pd
+df = employee[employee['salary'] == employee.groupby(['department'])['salary'].transform('max')][['department','first_name','salary']]
 ```
