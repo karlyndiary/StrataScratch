@@ -9,5 +9,7 @@ fb_active_users:
 | country     | varchar   |
 
 ```
-
+import pandas as pd
+result = fb_active_users[fb_active_users['country'] == 'USA'].groupby('status')['user_id'].count().to_frame('user_count')
+result = result.loc['open'] / result['user_count'].sum()
 ```
