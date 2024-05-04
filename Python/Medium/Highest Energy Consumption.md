@@ -19,5 +19,8 @@ fb_na_energy:
 | consumption  | int       |
 
 ```
-
+import pandas as pd
+energy = pd.concat([fb_eu_energy, fb_asia_energy, fb_na_energy])
+consumption = energy.groupby(['date']).sum().reset_index()
+max_consumption = consumption[consumption['consumption'] == consumption['consumption'].max()][['date','consumption']]
 ```
