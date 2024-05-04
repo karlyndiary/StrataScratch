@@ -26,5 +26,7 @@ airbnb_search_details:
 | beds                    | int        |
 
 ```
-
+import pandas as pd
+df = airbnb_search_details.groupby(['city'])['amenities'].nunique().reset_index()
+df = df[df['amenities'] == df['amenities'].max()][['city']]
 ```
