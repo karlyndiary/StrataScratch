@@ -19,5 +19,6 @@ employee:
 | manager_id     | int       |
 
 ```
-
+import pandas as pd
+df = employee['salary'].sort_values(ascending = False).iloc[1]
 ```
