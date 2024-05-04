@@ -8,5 +8,6 @@ google_file_store:
 | contents    | varchar   |
 
 ```
-
+import pandas as pd
+google_file_store.contents.str.findall(r'\bbull\b|\bbear\b').explode().value_counts().reset_index()
 ```
