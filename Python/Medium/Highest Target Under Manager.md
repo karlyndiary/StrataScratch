@@ -20,5 +20,7 @@ salesforce_employees:
 | manager_id     | int       |
 
 ```
-
+import pandas as pd
+df = salesforce_employees[salesforce_employees['manager_id'] == 13]
+target = df[df['target'] == df['target'].max()][['first_name', 'target']]
 ```
