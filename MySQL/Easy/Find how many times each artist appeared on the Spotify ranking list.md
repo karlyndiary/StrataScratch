@@ -15,7 +15,7 @@ spotify_worldwide_daily_song_ranking:
 | region     | varchar   |
 
 ```
-select distinct artist, count(artist) as n_occurences
+select distinct artist, count(*) as n_occurences
 from spotify_worldwide_daily_song_ranking
 group by artist
 order by n_occurences desc
