@@ -25,3 +25,10 @@ where post_id in (select post_id
                   from facebook_reactions
                   where reaction = 'heart')
 ```
+
+```
+select distinct fp.* 
+from facebook_posts as fp
+join facebook_reactions as fr on fp.post_id = fr.post_id
+where fr.reaction = 'heart'
+```
