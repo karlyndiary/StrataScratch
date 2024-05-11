@@ -19,5 +19,5 @@ forbes_global_2010_2014:
 select company, continent
 from forbes_global_2010_2014
 where sector = 'Financials'
-limit 1
+having max(profits)
 ```
