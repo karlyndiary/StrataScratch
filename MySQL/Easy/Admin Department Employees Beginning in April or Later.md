@@ -12,5 +12,7 @@ worker:
 | department | varchar |
 
 ```
-
+select count(*)
+from worker
+where department = 'Admin' and month(joining_date) >= 4;
 ```
