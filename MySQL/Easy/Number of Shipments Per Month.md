@@ -11,7 +11,7 @@ amazon_shipment:
 | shipment_date  | datetime  |
 
 ```
-select count(shipment_id), DATE_FORMAT(shipment_date, '%Y-%m') AS ym
+select count(concat(shipment_id, sub_id)), DATE_FORMAT(shipment_date, '%Y-%m') AS ym
 from amazon_shipment
 group by ym
 ```
