@@ -14,5 +14,10 @@ online_orders:
 | units_sold     | int       |
 
 ```
-
+select product_id, sum(units_sold * cost_in_dollars) as total_revenue
+from online_orders
+where month(date) between 1 and 6 and year(date) = 2022
+group by product_id
+order by total_revenue desc
+limit 5
 ```
