@@ -5,4 +5,5 @@
   - [Medium](https://github.com/karlyndiary/StrataScratch/tree/main/Python/Medium)
   - [Hard](https://github.com/karlyndiary/StrataScratch/tree/main/Python/Hard)
 - [MySQL](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL)
-  - [Easy](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL/Easy) 
+  - [Easy](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL/Easy)
+  - [Medium](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL/Medium)
