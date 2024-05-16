@@ -11,6 +11,12 @@ airbnb_hosts:
 | revenue    | int       |
 
 airbnb_guests:
+| Field       | Type    |
+|-------------|---------|
+| guest_id    | int     |
+| nationality | varchar |
+| gender      | varchar |
+| age         | int     |
 
 ```
 select distinct ah.host_id, ag.guest_id
