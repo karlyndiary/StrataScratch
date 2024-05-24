@@ -26,15 +26,15 @@ sf_bonus:
 | bonus         | int       |
 
 ```
-with cte as (
-select id, employee_title, sex, salary, sum(bonus) as bonus
-from sf_employee emp 
-join sf_bonus bonus
-on emp.id = bonus.worker_ref_id
-where bonus is not null
-group by id, employee_title)
+with bonus as (
+select worker_ref_id, sum(bonus) as bonus
+from sf_bonus
+group by worker_ref_id)
 
 select employee_title, sex, avg(salary + bonus) as avg_comp
-from cte
+from sf_employee emp 
+join bonus b
+on emp.id = b.worker_ref_id
+where bonus is not null
 group by employee_title
 ```
