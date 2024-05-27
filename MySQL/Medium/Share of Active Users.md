@@ -9,7 +9,10 @@ fb_active_users:
 | country     | varchar   |
 
 ```
-select avg(case when status = 'open' then 1 else 0 end) as active_users_share
-from fb_active_users
-where country = 'USA'
+SELECT active_users/cast(total_users as float) as active_users_share 
+FROM
+(SELECT COUNT(user_id) total_users,
+          COUNT(CASE WHEN status = 'open' THEN 1 ELSE NULL END) AS active_users
+   FROM fb_active_users
+   WHERE country = 'USA') sub
 ```
