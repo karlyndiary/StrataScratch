@@ -19,5 +19,15 @@ yelp_business:
 | categories    | varchar   |
 
 ```
-
+select state, five_star_counts 
+from (
+    select state, 
+           count(business_id) as five_star_counts, 
+           rank() over(order by count(business_id) desc) as state_rank
+    from yelp_business
+    where stars = 5
+    group by state
+    order by state_rank, state
+) sub
+where state_rank <= 5
 ```
