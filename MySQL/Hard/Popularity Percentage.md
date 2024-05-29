@@ -9,5 +9,15 @@ facebook_friends:
 | user2       | int       |
 
 ```
+with users as (
+select *
+from facebook_friends
+union
+select user2 as user1, user1 as user2
+from facebook_friends
+order by user1)
 
+select user1, (count(user2)/(select count(distinct(user1)) from users)) * 100 as percentage_popularity
+from users
+group by user1
 ```
