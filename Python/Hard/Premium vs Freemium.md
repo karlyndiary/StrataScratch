@@ -22,5 +22,8 @@ ms_download_facts
 | downloads | int       |
 
 ```
-
+import pandas as pd
+df = ms_user_dimension.merge(ms_acc_dimension, on = 'acc_id').merge(ms_download_facts, on = 'user_id')
+df = df.pivot_table(index = ['date'], columns = 'paying_customer', values = 'downloads', aggfunc = 'sum')
+df[df['no']>df['yes']].reset_index()
 ```
