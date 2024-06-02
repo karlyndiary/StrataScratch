@@ -12,5 +12,8 @@ fraud_score:
 | fraud_score | float     |
 
 ```
-
+import pandas as pd
+fraud_score['percent'] = fraud_score.groupby(['state'])['fraud_score'].rank(pct = True)
+df = fraud_score[fraud_score['percent'] > 0.95]
+result = df[['policy_num','state','claim_cost','fraud_score']]
 ```
