@@ -15,7 +15,8 @@ fact_events:
 ```
 with cte as (
 select client_id, user_id,
-(sum(case when event_type in ('video call received', 'video call sent', 'voice call received', 'voice call sent') then 1 else 0 end) / count(event_type)) as ratio
+(sum(case when event_type in ('video call received', 'video call sent', 'voice call received', 'voice call sent') then 1 else 0 end)
+                                                 / count(event_type)) as ratio
 from fact_events
 group by 1, 2 ) 
 
