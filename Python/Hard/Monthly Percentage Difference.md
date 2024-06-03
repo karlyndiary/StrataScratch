@@ -14,7 +14,7 @@ sf_transactions:
 import pandas as pd
 sf_transactions['year_month'] = sf_transactions['created_at'].dt.to_period('M')
 monthly_values = sf_transactions.groupby(['year_month'])['value'].sum().reset_index()
-monthly_values['percentage_change'] =  monthly_values['value'].pct_change() * 100
+monthly_values['percentage_change'] =  monthly_values['value'].pct_change() * 100 
 monthly_values['percentage_change'] = round(monthly_values['percentage_change'], 2)
 monthly_values[['year_month', 'percentage_change']]
 ```
