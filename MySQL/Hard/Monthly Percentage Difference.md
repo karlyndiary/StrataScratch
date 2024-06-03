@@ -11,5 +11,10 @@ sf_transactions:
 | purchase_id  | int        |
 
 ```
-
+select date_format(created_at, '%Y-%m') as ym, 
+round((sum(value) - lag(sum(value)) over()) / 
+                   lag(sum(value)) over() * 100, 2) as percentage_change
+from sf_transactions
+group by ym
+order by ym
 ```
