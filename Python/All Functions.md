@@ -1,3 +1,4 @@
+### EASY
 | Function | Description |
 |----------|-------------|
 | dt.month = 4 | Selecting rows where the month component of a datetime column equals April. |
@@ -17,8 +18,15 @@
 | [yelp_reviews['cool'] == yelp_reviews['cool'].max()] | Returning rows where the 'cool' column value equals the maximum value in the 'cool' column. |
 | .value_counts() | Counting the occurrences of unique values in a Series. |
 | .nunique() | Counting the number of unique values in a Series. |
+### MEDIUM
+| Function | Description |
+|----------|-------------|
 | df = df.drop_duplicates(subset=['user_id', 'device']) | Removing duplicate rows from the DataFrame based on the values in the 'user_id' and 'device' columns. |
 | df = winemag_p1[winemag_p1['description'].str.lower().str.contains("\\bplum\\b")] | Filtering rows in the 'winemag_p1' DataFrame where the 'description' column contains the words 'plum', 'cherry', 'rose', or 'hazelnut' (case-insensitive). |
 | median_scores = sat_scores[sat_scores['sat_writing'] == sat_scores['sat_writing'].median()] | Selecting rows from the 'sat_scores' DataFrame where the 'sat_writing' column value equals the median value of the 'sat_writing' column. |
 | df['address'].count() / len(df['address'].notna()) * 100 | Calculating the percentage of non-null values in the 'address' column of the DataFrame. |
 |  | or operator |
+|[0:10] or head 10 |Top 10 items|
+### HARD
+| Function | Description |
+|----------|-------------|
