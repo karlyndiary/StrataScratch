@@ -44,7 +44,7 @@
 ### HARD
 | Function | Description |
 |----------|-------------|
-|.findall(r'\bbull\b|\bbear\b')||
+|.findall(r'\bbull\b or symbol here \bbear\b')||
 |.map(str)||
 |df1['host_popularity_rating'] = df1['number_of_reviews'].apply(lambda x: 'New' if x < 1 else 'Rising' if x <= 5 else 'Trending Up' if x <=15 else 'Popular' if x <= 40 else 'Hot')
 ||
