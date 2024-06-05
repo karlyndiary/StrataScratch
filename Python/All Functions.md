@@ -27,6 +27,21 @@
 | df['address'].count() / len(df['address'].notna()) * 100 | Calculating the percentage of non-null values in the 'address' column of the DataFrame. |
 |  | or operator |
 |[0:10] or head 10 |Top 10 items|
+|result = draft.contents.str.split('\W+', expand=True).stack().value_counts().reset_index()||
+|.diff()||
+|df[df['diff'] <= pd.Timedelta(days=7)]||
+|df = df.rename(columns = {'username': 'num_unique_users'})| renaming column|
+|energy = pd.concat([fb_eu_energy, fb_asia_energy, fb_na_energy])| when one or more data frames have the same no of columns and datatypes|
+|df = titanic.pivot_table(index = 'survived', columns = 'pclass', values = 'passengerid', aggfunc = 'nunique').reset_index()|pivot table|
+|df1['year'] = df1['inspection_date'].dt.year|isolate the year from the date column|
+|premium['seven_days_later'] = premium.entry_date + pd.Timedelta(days=7)||
+|yelp_business['category'] = yelp_business['categories'].str.split(';')||
+|yelp_business = yelp_business.explode('category')||
+|.iloc[1]||
+|.to_frame('user_count')||
+|result.loc['open']||
+|df1['day'] = df1['timestamp'].dt.date||
 ### HARD
 | Function | Description |
 |----------|-------------|
+|||
