@@ -14,5 +14,19 @@ marketing_campaign:
 | price       | int       |
 
 ```
+with user as (
+select user_id, min(created_at) as x
+from marketing_campaign
+group by user_id),
 
+user_product as (
+select user_id, product_id, min(created_at) as y
+from marketing_campaign
+group by user_id, product_id)
+
+select count(distinct u.user_id) as count_ids
+from user u 
+join user_product p 
+on u.user_id = p.user_id
+where x != y
 ```
