@@ -1,0 +1,22 @@
+- dt.month = 4 -> selecting april
+- employee['avg_salary'] -> creating a new column
+- employee.groupby('department')['salary'].transform('mean') -> grouping and average
+- employee[['first_name', 'department', 'salary', 'avg_salary']] -> return important columns only
+- ['end_time'].max() -> return the highest end time or value from the column
+- ['movie'].count() -> count of movies
+- oscar_nominees[oscar_nominees['nominee'] == 'Abigail Breslin'] -> isolating the column and using the where clause in pandas
+- ['event_name'].value_counts() ->
+- df = pd.merge(customers, orders, left_on = 'id', right_on = 'cust_id', how = 'left') -> merge
+- .sort_values(['first_name', 'order_details']) -> sorting
+- [['home_library_code']].drop_duplicates() -> drop duplicates from the column
+- sf_public_salaries[sf_public_salaries['jobtitle'].str.contains('CAPTAIN')] -> checking to see if jobtitle has the string or word 'CAPTAIN'
+- lyft_drivers[(lyft_drivers['yearly_salary'] <= 30000) | (lyft_drivers['yearly_salary'] >= 70000)] -> min and max
+- amazon_shipment['shipment_date'].dt.strftime('%Y-%m') -> date format
+- df[df['first_name'].isin(['Jill', 'Eva'])] -> only considering Jill and Eva in the first name column
+- .size() ->
+- [yelp_reviews['cool'] == yelp_reviews['cool'].max()] -> returning the max from the column
+- value_count() ->
+- nunique() ->
+- df = df.drop_duplicates(subset=['user_id', 'device']) ->
+- df = winemag_p1[winemag_p1['description'].str.lower().str.contains("\\bplum\\b|\\bcherry\\b|\\brose\\b|\\bhazelnut\\b")] ->
+- 
