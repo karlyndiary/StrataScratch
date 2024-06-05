@@ -44,4 +44,13 @@
 ### HARD
 | Function | Description |
 |----------|-------------|
+|.findall(r'\bbull\b|\bbear\b')||
+|.map(str)||
+|df1['host_popularity_rating'] = df1['number_of_reviews'].apply(lambda x: 'New' if x < 1 else 'Rising' if x <= 5 else 'Trending Up' if x <=15 else 'Popular' if x <= 40 else 'Hot')
+||
+|created_at.min()||
+|sf_transactions['created_at'].dt.to_period('M')||
+|.pct_change() * 100 ||
+|round(monthly_values['percentage_change'], 2)|round up to 2 decimal places|
+|.rank(pct = True)||
 |||
