@@ -11,5 +11,16 @@ sf_event:
 | user_id     | varchar   |
 
 ```
+with cte1 as (select user_id, account_id, max(date) as last_date
+from sf_events
+group by user_id, account_id), 
 
+cte2 as (
+select *, case when date_format(last_date, '%Y-%m') > '2020-12' then 1 else 0 end as dec_2020,
+          case when date_format(last_date, '%Y-%m') > '2021-01' then 1 else 0 end as jan_2021
+from cte1)
+
+select account_id, round(sum(jan_2021)/sum(dec_2020)) as retention
+from cte2
+group by account_id
 ```
