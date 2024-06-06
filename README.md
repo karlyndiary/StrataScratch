@@ -7,3 +7,4 @@
 - [MySQL](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL)
   - [Easy](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL/Easy)
   - [Medium](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL/Medium)
+  - [Hard](https://github.com/karlyndiary/StrataScratch/tree/main/MySQL/Hard)
