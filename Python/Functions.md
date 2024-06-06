@@ -53,4 +53,4 @@
 |.pct_change() * 100 ||
 |round(monthly_values['percentage_change'], 2)|round up to 2 decimal places|
 |.rank(pct = True)||
-|||
+|max_date = sf_events.groupby('user_id')['date'].max().to_frame('max_date').reset_index()|The to_frame method in pandas is used to convert a Series to a DataFrame. When you use groupby and then apply an aggregation function like max, the result is typically a Series.|
