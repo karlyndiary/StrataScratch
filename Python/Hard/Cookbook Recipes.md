@@ -11,5 +11,11 @@ cookbook_titles:
 |title|varchar|
 
 ```
-
+import pandas as pd
+empty_df = pd.DataFrame({'page_number': range(max(cookbook_titles['page_number']) + 1)})
+df = pd.merge(empty_df, cookbook_titles, how = 'left', on = 'page_number')
+df_even = df[df['page_number']%2==0]
+df_odd = df[df['page_number']%2==1]
+df_odd['page_number'] = df_odd['page_number']-1
+result = pd.merge(df_even, df_odd, how='left', on='page_number').rename(columns = {'page_number':'left_page_number','title_x': 'left_title', 'title_y':'right_title'})
 ```
