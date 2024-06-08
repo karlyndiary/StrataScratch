@@ -11,5 +11,12 @@ cookbook_titles:
 |title|varchar|
 
 ```
+with page_index as (select (row_number() over(order by page_number) - 1) * 2 as left_page,
+                           (row_number() over(order by page_number) - 1) * 2 + 1 as right_page
+from cookbook_titles)
 
+select t.left_page, t1.title as left_title, t2.title as right_title
+from page_index t
+left join cookbook_titles t1 on t.left_page = t1.page_number
+left join cookbook_titles t2 on t.right_page = t2.page_number
 ```
