@@ -9,3 +9,7 @@ cookbook_titles:
 |------|---------|
 |page_number|int|
 |title|varchar|
+
+```
+
+```
