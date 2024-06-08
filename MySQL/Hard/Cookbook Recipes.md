@@ -22,5 +22,7 @@ left join cookbook_titles t2 on t.right_page = t2.page_number
 ```
 
 Page number starts from 1 in the cookbook_titles the page numbers for both left and right are then calculated from there
+
 left page is calculated -> 1 - 1 * 2 => 0 
+
 right page -> 1 - 1 * 2 + 1 => 3 and so on
